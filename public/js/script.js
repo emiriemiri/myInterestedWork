@@ -1,14 +1,4 @@
 (function(){function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s}return e})()({1:[function(require,module,exports){
-"use strict";
-
-exports.__esModule = true;
-
-exports.default = function (instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-};
-},{}],2:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.2.4
  * http://jquery.com/
@@ -9824,35 +9814,30 @@ if ( !noGlobal ) {
 return jQuery;
 }));
 
-},{}],3:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _classCallCheck2 = require("babel-runtime/helpers/classCallCheck");
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Sample = function Sample() {
-    var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-    (0, _classCallCheck3.default)(this, Sample);
-
-    this.name = opts.name;
-};
-
-exports.default = Sample;
-;
-
-},{"babel-runtime/helpers/classCallCheck":1}],4:[function(require,module,exports){
+},{}],2:[function(require,module,exports){
 'use strict';
 
-var _Sample = require('./lib/Sample');
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.default = test01;
+function test01() {
+	var item = document.querySelectorAll(".js-item");
+	var itemLength = item.length;
+	console.log(itemLength);
+	for (var i = 0; i < itemLength; i++) {
+		item[i].addEventListener('click', function () {
+			this.classList.toggle('active');
+		});
+	}
+}
 
-var _Sample2 = _interopRequireDefault(_Sample);
+},{}],3:[function(require,module,exports){
+'use strict';
+
+var _test = require('./lib/test01');
+
+var _test2 = _interopRequireDefault(_test);
 
 var _jquery = require('jquery');
 
@@ -9860,12 +9845,6 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var sample = new _Sample2.default({
-    name: 'world'
-});
+(0, _test2.default)();
 
-(0, _jquery2.default)('.wrapper').on('click', function () {
-    console.log('hello, ' + sample.name + '.');
-});
-
-},{"./lib/Sample":3,"jquery":2}]},{},[4]);
+},{"./lib/test01":2,"jquery":1}]},{},[3]);

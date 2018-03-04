@@ -1,10 +1,5 @@
-import Sample from './lib/Sample';
+import test01 from './lib/test01';
 import $ from 'jquery';
 
-const sample = new Sample({
-    name: 'world'
-});
 
-$('.wrapper').on('click', () => {
-    console.log(`hello, ${sample.name}.`);
-});
+test01()

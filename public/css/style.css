@@ -71,21 +71,24 @@ table {
   padding: 20px;
   margin: 20px;
   font-weight: bold;
-  color: #fff; }
+  color: #fff;
+  overflow: hidden; }
   .content__item:before {
     content: "";
     position: absolute;
     top: 0;
-    left: 0;
+    left: -100%;
     width: 0;
     height: 200px;
-    background-color: #A8B7C0; }
-  .content__item:hover:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 200px;
     background-color: #A8B7C0;
-    transition: all 300ms 0s ease; }
+    transition: all 500ms 0s ease; }
+
+.active:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200px;
+  background-color: #A8B7C0;
+  transition: all 500ms 0s ease; }
