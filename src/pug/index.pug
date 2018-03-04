@@ -10,5 +10,5 @@ prepend config-block
 block content-block
   .wrap
   .content
-    - for (var i = 0; i < 24; i++; )
-      .content__item#{i} img
+    - for (var i = 1; i < 25; i++ )
+      .content__item(class =`content__item--${i}`) BOX
